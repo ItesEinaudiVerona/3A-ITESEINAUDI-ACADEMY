@@ -1,7 +1,6 @@
 * {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
-
 }
 
 @font-face {
@@ -9,16 +8,17 @@
   src: url(../fonts/Welcome.ttf);
 }
 
+/* ------------------------- FORMATTAZIONE NAVBAR E LOGO --------------------------*/
 nav {
   display: flex;
   justify-content: space-between;
   align-content: center;
   margin: 0 10%;
+  background-color: rgb(190, 133, 243, 0.1);
 }
 
 .navbar {
   overflow: hidden;
-  background-color: #fff;
   align-content: center;
 }
 
@@ -30,7 +30,7 @@ nav {
   padding: 14px 16px;
   text-decoration: none;
   color: #d670ef;
-
+  border-radius: 5%;
 }
 
 .navbar .active {
@@ -45,6 +45,7 @@ nav {
 .dropdown {
   float: left;
   overflow: hidden;
+  border-radius: 5%;
 }
 
 .dropdown .btn {
@@ -65,6 +66,7 @@ nav {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(214, 112, 239, 1);
   z-index: 1;
+  border-radius: 5%;
 }
 
 .dropdown-menu a {
@@ -93,17 +95,18 @@ nav {
 }
 
 #logo {
-  width: 100px;
-  background: #E6E6E6;
-  padding: 0;
+  width: 70px;
   display: flex;
-  align-items: center;
   text-align: center;
+  gap: 10%;
 }
-
 
 #logo img {
   width: 100%;
+}
+
+#logo-text {
+  margin-top: 7px;
 }
 
 #logo-text span {
@@ -111,7 +114,6 @@ nav {
   text-wrap: nowrap;
   color: #c640e8;
   font-family: Welcome;
-  width: 100%;
 }
 
 #logo-text::first-line {
@@ -123,10 +125,56 @@ nav {
   width: 100%;
 }
 
+/* ------------------------- FINE FORMATTAZIONE NAVBAR E LOGO --------------------------*/
 
-@media screen and (max-width: 1674px) {
+/* ------------------------- FORMATTAZIONE HOME PAGE BOX--------------------------------*/
+.homepage-box {
+  display: flex;
+  margin: 5% 7%;
+  background-color: rgb(190, 133, 243, 0.1);
+}
+
+.homepage-description {
+  position: relative;
+  max-width: 40%;
+  width: 100%;
+  margin: 10px auto;
+  text-align: justify;
+}
+
+.homepage-description h1 {
+  color: #D757F6;
+  font-size: 28pt;
+  text-align: left;
+}
+
+.homepage-description h2 {
+  color: #444444;
+  font-size: 18pt;
+  text-align: left;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 59%;
+  width: 100%;
+  margin: 10px auto;
+}
+/* ------------------------- FINE FORMATTAZIONE HOME PAGE BOX--------------------------------*/
+
+/* ------------------------- QUERY @MEDIA RESPONSIVE MAX WIDTH 1530 PX--------------------------------*/
+@media screen and (max-width: 1530px) {
+
   nav {
-    display: block;
+    display: flex;
+  }
+
+  .navbar a {
+    font-size: 8pt;
+  }
+
+  .dropdown .btn {
+    font-size: 8pt;
   }
 
   .navbar a.icon {
@@ -134,8 +182,52 @@ nav {
     display: block;
   }
 }
+/* ------------------------- QUERY @MEDIA RESPONSIVE MAX WIDTH 1294 PX--------------------------------*/
+@media screen and (max-width: 1294px) {
 
+  nav {
+    display: inline-block;
+  }
+
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+}
+/* ------------------------- QUERY @MEDIA RESPONSIVE MAX WIDTH 1000 PX--------------------------------*/
+@media screen and (max-width: 1000px) {
+
+  nav {
+    display: inline-block;
+  }
+
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+  
+  .homepage-box {
+    display: flex;
+    margin: 0;
+    flex-direction:column-reverse;
+  }
+  
+  .homepage-box .homepage-description {
+    max-width: 100%;
+    margin-bottom: 7%;
+    padding: 5%;
+
+   }
+  .homepage-box .slideshow-container {
+    width: 100%;
+    margin-top: 10%;
+  }
+
+}
+
+/* ------------------------- QUERY @MEDIA RESPONSIVE MAX WIDTH 550 PX--------------------------------*/
 @media screen and (max-width: 550px) {
+
   nav {
     display: block;
   }
@@ -169,7 +261,9 @@ nav {
 
   .navbar.responsive .dropdown .btn {
     display: block;
-    width: 100%;
     text-align: left;
   }
+
+
 }
+/* ------------------------- FINE @MEDIA RESPONSIVE--------------------------------*/
