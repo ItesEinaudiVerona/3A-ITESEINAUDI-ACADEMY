@@ -130,7 +130,7 @@ nav {
 /* ------------------------- FORMATTAZIONE HOME PAGE BOX--------------------------------*/
 .homepage-box {
   display: flex;
-  margin: 5% 7%;
+  margin: 3% 10%;
   background-color: rgb(190, 133, 243, 0.1);
   gap: 2%;
 }
