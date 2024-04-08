@@ -14,7 +14,7 @@ nav {
   justify-content: space-between;
   align-content: center;
   margin: 0 10%;
-  background-color: rgb(190, 133, 243, 0.1);
+  background-color: rgba(133, 159, 243, 0.1);
 }
 
 .navbar {
