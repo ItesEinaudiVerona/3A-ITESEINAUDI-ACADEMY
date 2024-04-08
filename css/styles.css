@@ -1,6 +1,11 @@
 * {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 16px;
+  font-size: 8pt;
+  
+}
+
+body {
+  background-color: rgba(133, 159, 243, 0.1);
 }
 
 @font-face {
@@ -14,7 +19,7 @@ nav {
   justify-content: space-between;
   align-content: center;
   margin: 0 10%;
-  background-color: rgba(133, 159, 243, 0.1);
+  /*background-color: rgba(133, 159, 243, 0.1);*/
 }
 
 .navbar {
@@ -49,7 +54,7 @@ nav {
 }
 
 .dropdown .btn {
-  font-size: 16px;
+  font-size: 8pt;
   border: none;
   outline: none;
   color: #d670ef;
@@ -106,11 +111,11 @@ nav {
 }
 
 #logo-text {
-  margin-top: 7px;
+  margin-top: 12px;
 }
 
 #logo-text span {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   text-wrap: nowrap;
   color: #c640e8;
   font-family: Welcome;
@@ -130,8 +135,8 @@ nav {
 /* ------------------------- FORMATTAZIONE HOME PAGE BOX--------------------------------*/
 .homepage-box {
   display: flex;
-  margin: 3% 10%;
-  background-color: rgb(190, 133, 243, 0.1);
+  margin: 0 10%;
+  /*background-color: rgb(190, 133, 243, 0.1);*/
   gap: 2%;
 }
 
@@ -139,99 +144,80 @@ nav {
   position: relative;
   max-width: 40%;
   width: 100%;
-  margin: 10px auto;
+  margin: 10px 0;
   text-align: justify;
 }
 
-.homepage-description h1 {
+h1 {
   color: #D757F6;
-  font-size: 28pt;
+  font-size: 20pt;
   text-align: left;
+  margin-left: 10%;
+  margin-top: 30px;
+  line-height: 10px;
 }
 
-.homepage-description h2 {
+h2 {
   color: #444444;
-  font-size: 18pt;
+  font-size: 12pt;
   text-align: left;
+  margin-left: 10%;
+  line-height: 20px;
 }
 
-.slideshow-container {
-  position: relative;
-  max-width: 59%;
-  width: 100%;
-  margin: 10px auto;
-}
+
 /* ------------------------- FINE FORMATTAZIONE HOME PAGE BOX--------------------------------*/
 
-/* ------------------------- QUERY @MEDIA RESPONSIVE MAX WIDTH 1530 PX--------------------------------*/
-@media screen and (max-width: 1530px) {
+/* ------------------------- QUERY @MEDIA RESPONSIVE  --------------------------------*/
 
-  nav {
-    display: flex;
+/* ------------------------- QUERY @MEDIA RESPONSIVE MAX WIDTH 550 PX--------------------------------*/
+@media only screen and (max-width: 1250px) {
+  * {
+    font-size: 6pt;
   }
 
-  .navbar a {
-    font-size: 8pt;
+  #logo img {
+    width: 50%;
   }
 
   .dropdown .btn {
-    font-size: 8pt;
+    font-size: 6pt;
   }
 
-  .navbar a.icon {
-    float: right;
-    display: block;
-  }
 }
-/* ------------------------- QUERY @MEDIA RESPONSIVE MAX WIDTH 1294 PX--------------------------------*/
-@media screen and (max-width: 1294px) {
 
+@media only screen and (max-width: 1054px) {
   nav {
-    display: inline-block;
-  }
-
-  .navbar a.icon {
-    float: right;
     display: block;
   }
-}
-/* ------------------------- QUERY @MEDIA RESPONSIVE MAX WIDTH 1000 PX--------------------------------*/
-@media screen and (max-width: 1000px) {
-
-  nav {
-    display: inline-block;
-  }
-
-  .navbar a.icon {
-    float: right;
-    display: block;
+  
+  .dropdown-menu {
+    margin-left: 50px;
   }
   
   .homepage-box {
     display: flex;
-    margin: 0;
-    flex-direction:column-reverse;
-  }
-  
-  .homepage-box .homepage-description {
-    max-width: 100%;
-    margin-bottom: 7%;
-    padding: 5%;
-
-   }
-  .homepage-box .slideshow-container {
-    width: 100%;
-    margin-top: 10%;
+    flex-direction: column-reverse;
   }
 
+  .homepage-description {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .fade img {
+    max-width: 300px;
+    max-height: 350px;
+  }
+
+  .numbertext,
+  .text {
+    max-width: 300px;
+    max-height: 350px;
+  }
 }
 
-/* ------------------------- QUERY @MEDIA RESPONSIVE MAX WIDTH 550 PX--------------------------------*/
-@media screen and (max-width: 550px) {
-
-  nav {
-    display: block;
-  }
+@media only screen and (max-width: 600px) {
 
   .navbar a:not(:first-child),
   .dropdown .btn {
@@ -265,6 +251,14 @@ nav {
     text-align: left;
   }
 
+  h1, h2 {
+    text-align: center;
+  }
+
+  .text {
+    font-size: 11px
+  }
 
 }
+
 /* ------------------------- FINE @MEDIA RESPONSIVE--------------------------------*/
