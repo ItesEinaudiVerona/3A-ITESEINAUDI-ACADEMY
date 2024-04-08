@@ -255,19 +255,22 @@ h2 {
     text-align: left;
   }
 
-  .fade img {
-    max-width: 250px;
-    max-height: 250px;
-
-  }
-
-  .numbertext,
-  .text {
-    max-width: 250px;
-    max-height: 250px;
-
-
-  }
+  .homepage-box {
+    margin: 0 auto;
+   }
+ 
+   .fade img {
+     max-width: 350px;
+     max-height: 350px;
+ 
+   }
+ 
+   .numbertext,
+   .text {
+     max-width: 350px;
+     max-height: 350px;
+ 
+   }
 
   h1 {
     margin-top: 7%;
