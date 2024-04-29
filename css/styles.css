@@ -1,3 +1,22 @@
+:root {
+  --primary-color: #de8921;
+  --prymary-border: #de8921;
+  --text-color: #f9f9f9;
+  --page-background-color: rgba(133, 159, 243, 0.1);
+  --background-hover: #87b5bf;
+  --gradient-start: #7eccdb;
+  --gradient-end: #06afd1;
+  --box-shadow: #05819a;
+  --color-active: yellow;
+  --color-visited: red;
+  --text-color-h2: gray;
+  --text-color-p: gray;
+
+  --margin-page: 0 10%;
+  --margin-page-mediaquery: 0 2%;
+}
+
+
 * {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 8pt;
@@ -5,8 +24,13 @@
 }
 
 body {
-  background-color: rgba(133, 159, 243, 0.1);
+  background-color: var(--page-background-color);
 }
+
+.boxSidebarEContenuti {
+  display: flex;
+}
+
 
 @font-face {
   font-family: Welcome;
@@ -18,8 +42,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-content: center;
-  margin: 0 10%;
-  /*background-color: rgba(133, 159, 243, 0.1);*/
+  margin: var(--margin-page);
 }
 
 .navbar {
@@ -34,13 +57,13 @@ nav {
   flex-wrap: wrap;
   padding: 14px 16px;
   text-decoration: none;
-  color: #d670ef;
+  color: var(--primary-color);
   border-radius: 5%;
 }
 
 .navbar .active {
-  background-color: #d670ef;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--text-color);
 }
 
 .icon {
@@ -57,7 +80,7 @@ nav {
   font-size: 8pt;
   border: none;
   outline: none;
-  color: #d670ef;
+  color: var(--primary-color);
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
@@ -67,16 +90,16 @@ nav {
 .dropdown-menu {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(214, 112, 239, 1);
+  box-shadow: 0px 8px 16px 0px var(--box-shadow);
   z-index: 1;
   border-radius: 5%;
 }
 
 .dropdown-menu a {
   float: none;
-  color: #d670ef;
+  color: var(--primary-color);
+  background-color: var(--page-background-color);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -84,15 +107,14 @@ nav {
 }
 
 .navbar a:hover,
-.dropdown:hover .btn {
-  background-color: #d670ef;
-  color: white;
+.dropdown:hover .btn:hover {
+  background-color: var(--primary-color);
+  color: var(--text-color);
 }
 
 .dropdown-menu a:hover {
-  background-color: #d670ef;
-  color: white;
-
+  background-color: var(--primary-color);
+  color: var(--text-color);
 }
 
 .dropdown:hover .dropdown-menu {
@@ -117,7 +139,7 @@ nav {
 #logo-text span {
   font-size: 1.2rem;
   text-wrap: nowrap;
-  color: #c640e8;
+  color: var(--primary-color);
   font-family: Welcome;
 }
 
@@ -133,14 +155,19 @@ nav {
 /* ------------------------- FINE FORMATTAZIONE NAVBAR E LOGO --------------------------*/
 
 /* ------------------------- FORMATTAZIONE HOME PAGE BOX--------------------------------*/
-.homepage-box {
+.homepage-box,
+.box-Students_life,
+.box-Students_lifeHere {
   display: flex;
-  margin: 0 10%;
+  margin: var(--margin-page);
   gap: 2%;
 }
 
-.homepage-description {
+.homepage-description,
+.box-Students_life-description,
+.box-Students_lifeHere-description {
   position: relative;
+  line-height: 2.5em;
   max-width: 40%;
   width: 100%;
   margin: 10px 0;
@@ -148,7 +175,7 @@ nav {
 }
 
 h1 {
-  color: #D757F6;
+  color: var(--primary-color);
   font-size: 20pt;
   text-align: left;
   margin-left: 10%;
@@ -157,23 +184,39 @@ h1 {
 }
 
 h2 {
-  color: #444444;
+  color: var(--text-color-h2);
   font-size: 12pt;
   text-align: left;
   margin-left: 10%;
   line-height: 20px;
 }
 
+p {
+  color: var(--text-color-p);
+  font-size: 10pt;
+}
+
+.BoxHome-Calendar {
+  text-align: center;
+}
+
 /* ------------------------- FINE FORMATTAZIONE HOME PAGE BOX--------------------------------*/
 
-/* ------------------------- FORMATTAZIONE SCORRIMENTO NEWS--------------------------------*/
+/* ------------------------- FORMATTAZIONE SCORRIMENTO NEWS HOME PAGE BOX--------------------------------*/
+.marquee-box {
+  margin: var(--margin-page);
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
 .image-container {
   position: relative;
-  
+
 }
-.image-container img{
+
+.image-container img {
   width: 150px;
-  height: 120px;
+  height: 220px;
   margin: 0 50px;
 }
 
@@ -181,100 +224,319 @@ h2 {
 .image-text {
   position: absolute;
   width: 150px;
-  top: 90%;
+  top: 95%;
   left: 125px;
   height: 25px;
   transform: translate(-50%, -50%);
   z-index: 1;
-  background-color: #D757F6;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--text-color);
   font-size: 8pt;
   font-weight: bold;
   padding-left: 5px;
+  padding-top: 5px;
+  padding-top: 5px;
+  text-align: center;
 }
+
 .image-text1 {
   position: absolute;
   width: 150px;
-  top: 90%;
-  left: 378px;
+  top: 95%;
+  left: 379px;
   height: 25px;
   transform: translate(-50%, -50%);
   z-index: 1;
-  background-color: #D757F6;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--text-color);
   font-size: 8pt;
   font-weight: bold;
   padding-left: 5px;
+  padding-top: 5px;
+  text-align: center;
 }
+
 .image-text2 {
   position: absolute;
   width: 150px;
-  top: 90%;
-  left: 633px;
+  top: 95%;
+  left: 632.5px;
   height: 25px;
   transform: translate(-50%, -50%);
   z-index: 1;
-  background-color: #D757F6;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--text-color);
   font-size: 8pt;
   font-weight: bold;
   padding-left: 5px;
+  padding-top: 5px;
+  text-align: center;
 }
+
 .image-text3 {
   position: absolute;
   width: 150px;
-  top: 90%;
-  left: 886px;
+  top: 95%;
+  left: 886.5px;
   height: 25px;
   transform: translate(-50%, -50%);
   z-index: 1;
-  background-color: #D757F6;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--text-color);
   font-size: 8pt;
   font-weight: bold;
   padding-left: 5px;
+  padding-top: 5px;
+  text-align: center;
 }
+
 .image-text4 {
   position: absolute;
   width: 150px;
   top: 90%;
   left: 1140px;
-  height: 25px;
+  height: 42px;
   transform: translate(-50%, -50%);
   z-index: 1;
-  background-color: #D757F6;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--text-color);
   font-size: 8pt;
   font-weight: bold;
   padding-left: 5px;
+  padding-top: 2px;
+  text-align: center;
 }
 
 
-  /* unvisited link */ 
-  .image-container a:link {
-    text-decoration: none;
-  }
-  
-  /* visited link */
-  .image-container a:visited {
-    text-decoration: none;
-  }
-  
-  /* mouse over link */
-  .image-container a:hover {
-    text-decoration: none;
-  }
-  
-  /* selected link */
-  .image-container a:active {
-    text-decoration: none;
-  }
+/* unvisited link */
+.image-container a:link {
+  text-decoration: none;
+}
 
-/* ------------------------- FINE FORMATTAZIONE SCORRIMENTO NEWS--------------------------------*/
+/* visited link */
+.image-container a:visited {
+  text-decoration: none;
+}
+
+/* mouse over link */
+.image-container a:hover {
+  text-decoration: none;
+}
+
+/* selected link */
+.image-container a:active {
+  text-decoration: none;
+}
+
+/* ------------------------- FINE FORMATTAZIONE SCORRIMENTO NEWS HOME PAGE BOX--------------------------------*/
+/* -------------------------  FORMATTAZIONE CALENDARIO HOME PAGE BOX--------------------------------*/
+.BoxHome-Calendar {
+  margin: 2%;
+}
+
+#Premi_Riconoscimenti-text {
+  color: var(--primary-color);
+  font-size: 18pt;
+  text-align: center;
+  margin-left: 10%;
+  margin-top: 30px;
+  margin-bottom: 5%;
+  line-height: 10px;
+}
+
+.BoxHome-Premi_Riconoscimemti {
+  display: grid;
+  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-areas:
+    "img1 img2 img4 img5"
+    "img6 img7 img8 img9"
+    "img10 img11 img12 img13"
+    "img14 img15 img16 img16";
+  margin: var(--margin-page);
+}
+
+.BoxHome-Premi_Riconoscimemti #img1 {
+  position: relative;
+  grid-area: 1;
+  width: 90%;
+  justify-self: center;
+}
+
+.BoxHome-Premi_Riconoscimemti #img2 {
+  position: relative;
+  grid-area: 1;
+  width: 90%;
+  justify-self: center;
+}
+
+.BoxHome-Premi_Riconoscimemti #img3 {
+  position: relative;
+  grid-area: 1;
+  width: 90%;
+  justify-self: center;
+}
+
+.BoxHome-Premi_Riconoscimemti #img4 {
+  position: relative;
+  grid-area: 1;
+  width: 90%;
+  justify-self: center;
+}
+
+/* ------------------------- FINE FORMATTAZIONE CALENDARIO HOME PAGE BOX--------------------------------*/
+
+/* -------------------------- FORMATTAZIONE PAGINA STUDENTI E CONTENUTI --------------------------------------*/
+.boxSidebarEContenuti {
+  width: 80%;
+  margin: var(--margin-page);
+  display: flex;
+}
+
+
+/* ------------------------- FORMATTAZIONE PAG STUDENTI BARRA LATERALE SINISTRA ------------------------------*/
+aside {
+  width: 15%;
+  margin: 2% 0;
+}
+
+.pulsante {
+  height: 30px;
+  width: 95%;
+  margin: 1% 2%;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: bold 10px Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+  border: solid 1px var(--prymary-border);
+  background: var(--primary-color);
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  -moz-box-shadow: 0 1px 3px var(--box-shadow);
+  -webkit-box-shadow: 0 1px 3px var(--box-shadow);
+  box-shadow: var(--box-shadow);
+}
+
+.pulsante:hover {
+  background: var(--background-hover);
+  background: -webkit-linear-gradient(linear, left top, left bottom, from(var(--gradient-start)), to(var(--gradient-end)));
+  background: -webkit-linear-gradient(top, var(--gradient-start), var(--gradient-end));
+  background: -moz-linear-gradient(top, var(--gradient-start), var(--gradient-end));
+  background: -ms-linear-gradient(top, var(--gradient-start), var(--gradient-end));
+  background: -o-linear-gradient(top, var(--gradient-start), var(--gradient-end));
+  background-image: linear-gradient(to top, var(--gradient-start), var(--gradient-end));
+}
+
+aside a #active {
+  background-color: var(--background-hover);
+}
+
+.pulsante:active {
+  color: var(--color-active);
+}
+
+.pulsante:visited {
+  color: var(--color-visited);
+}
+
+/* ------------------------- FORMATTAZIONE BARRA LATERALE SINISTRA---------------------------------------*/
+
+/*----------------------------- CONTENUTI PAGINA STUDENTI A DESTRA --------------------------------------*/
+
+.box-studenti {
+  display: block;
+  width: 85%;
+  margin: 0 auto;
+}
+
+/*----------------------------- CALENDATIO ATTIVITA' DI CLASSE --------------------------------------*/
+.Studenti-box-Calendar {
+  width: 40%;
+}
+
+#responsive-iframe {
+  position: absolute;
+  right: 10.5%;
+  border: solid 1px var(--primary-color);
+  margin: 0 auto;
+  width: 25%;
+}
+
+/*---------------------- CHIUSURA FORMATTAZIONE CALENDATIO ATTIVITA' DI CLASSE ------------------------*/
+
+/* ------------------------- INIZIO FORMATTAZIONE STUDENTI CONTENUTI MATERIE --------------------------------*/
+
+#Titolo-Studenti {
+  margin-top: 3.5%;
+  margin-left: 7%;
+}
+
+#Titolo-Materia {
+  margin-top: 3%;
+  margin-left: 10%;
+  color: var(--primary-color);
+  font-size: 16pt;
+  display: block;
+}
+
+#immage-studenti {
+  position: absolute;
+  right: 12%;
+}
+
+.box-studenti-contenuti-materie {
+  width: 60%;
+  margin: 5% 0 0 0;
+}
+
+.box-studenti-contenuti-materie h3,
+.box-studenti-contenuti-materie h4 {
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.box-studenti-contenuti-materie h3 {
+  font-size: 1.5rem;
+}
+
+.box-studenti-contenuti-materie li {
+  line-height: 1.5em;
+  margin-left: 10%;
+  line-height: 2em;
+  text-align: justify;
+}
+
+.contenuti-materie-primo-livello {
+  color: var(--primary-color);
+  font-style: italic;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+/* ------------------------- FINE FORMATTAZIONE STUDENTI CONTENUTI MATERIE --------------------------------*/
+
+/*----------------------------- CHIUSURA CONTENUTI PAGINA STUDENTI A DESTRA --------------------------------------*/
+
+/* -------------------------- FORMATTAZIONE PAGINA STUDENT'S LIFE --------------------------------------*/
+.box-Students_life-image {
+  width: 60%;
+  text-align: right;
+}
+
+.box-Students_lifeHere-image {
+  width: 60%;
+  text-align: left;
+}
+
+/* -------------------------- CHIUSURA FORMATTAZIONE PAGINA STUDENT'S LIFE --------------------------------------*/
 
 /* ------------------------- INIZIO FORMATTAZIONE FOOTER --------------------------------*/
 #footer {
-  color: #D757F6;
+  margin: var(--margin-page);
+  color: var(--primary-color);
   padding: 20px 0;
 }
 
@@ -290,18 +552,22 @@ h2 {
 
 .social-media a {
   margin: 0 10px;
-  color: #D757F6;
+  color: var(--primary-color);
   font-size: 20px;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .social-media a:hover {
-  color: #D757F6;
+  color: var(--primary-color);
 }
 
 .copyright {
   text-align: center;
   margin-top: 10px;
+}
+
+#anno-corrente {
+  color: var(--primary-color)
 }
 
 .links {
@@ -311,13 +577,13 @@ h2 {
 
 .links a {
   margin: 0 10px;
-  color: #D757F6;
+  color: var(--primary-color);
   font-size: 16px;
   transition: 0.3s;
 }
 
 .links a:hover {
-  color: #D757F6;
+  color: var(--primary-color);
 }
 
 /* ------------------------- FINE FORMATTAZIONE FOOTER --------------------------------*/
@@ -327,20 +593,25 @@ h2 {
 /* ------------------------- QUERY @MEDIA RESPONSIVE MAX WIDTH 1250px --------------------------------*/
 @media only screen and (max-width: 1250px) {
   * {
-    font-size: 6pt;
+    font-size: 8pt;
   }
 
   #logo img {
-    width: 50%;
+    width: 80%;
+    height: 80%;
   }
 
   .dropdown .btn {
-    font-size: 6pt;
+    font-size: 8pt;
   }
 
 }
 
-@media only screen and (max-width: 1054px) {
+/* ------------------------- FINE QUERY @MEDIA RESPONSIVE MAX WIDTH 1250px --------------------------------*/
+
+/* ------------------------- QUERY @MEDIA RESPONSIVE MAX WIDTH 1160px --------------------------------*/
+
+@media only screen and (max-width: 1160px) {
   nav {
     display: block;
   }
@@ -349,15 +620,42 @@ h2 {
     margin-left: 50px;
   }
 
-  .homepage-box {
+  .dropdown .btn {
+    font-size: 8pt;
+  }
+
+  .navbar a {
+    padding: 12px 6px;
+    font-size: 8pt;
+  }
+
+  .homepage-box,
+  .box-Students_life {
     display: flex;
     flex-direction: column-reverse;
+
+  }
+
+  .box-Students_lifeHere {
+    display: flex;
+    flex-direction: column;
 
   }
 
   .homepage-description {
     max-width: 80%;
     margin: 0 auto;
+  }
+
+  .box-Students_life-description,
+  .box-Students_lifeHere-description {
+    max-width: 80%;
+  }
+
+  .box-Students_life-image img,
+  .box-Students_lifeHere img {
+    max-width: 135%;
+    height: auto;
   }
 
   .fade img {
@@ -370,18 +668,44 @@ h2 {
   .text {
     max-width: 400px;
     max-height: 450px;
-
   }
+
+  .styled-calendar-container {
+    width: 200px;
+  }
+
+  .pulsante {
+    font-size: 0.7em;
+  }
+
+
+
 }
-/* ------------------------- FINE QUERY @MEDIA RESPONSIVE MAX WIDTH 1250px --------------------------------*/
+
+/* ------------------------- FINE QUERY @MEDIA RESPONSIVE MAX WIDTH 1054px --------------------------------*/
 
 /* ------------------------- QUERY @MEDIA RESPONSIVE MAX WIDTH 768px --------------------------------*/
 
 @media only screen and (max-width: 768px) {
 
-  *{ font-size: 10pt;}
-  .dropdown .btn {
+  * {
     font-size: 10pt;
+
+  }
+
+  nav,
+  .homepage-box,
+  .marquee-box {
+    margin: var(--margin-page-mediaquery);
+  }
+
+  .homepage-description {
+    max-width: 95%;
+    margin: var(--margin-page-mediaquery)
+  }
+
+  .dropdown .btn {
+    font-size: 8pt;
   }
 
   .navbar a:not(:first-child),
@@ -394,7 +718,8 @@ h2 {
     position: absolute;
     left: 50;
     top: 100;
-    color: #d670ef;
+    color: var(--primary-color);
+    ;
   }
 
   .navbar.responsive a {
@@ -418,20 +743,20 @@ h2 {
 
   .homepage-box {
     margin: 0 auto;
-   }
- 
-   .fade img {
-     max-width: 325px;
-     max-height: 350px;
- 
-   }
- 
-   .numbertext,
-   .text {
-     max-width: 325px;
-     max-height: 350px;
- 
-   }
+  }
+
+  .fade img {
+    max-width: 325px;
+    max-height: 350px;
+
+  }
+
+  .numbertext,
+  .text {
+    max-width: 325px;
+    max-height: 350px;
+
+  }
 
   h1 {
     margin-top: 7%;
@@ -446,15 +771,73 @@ h2 {
   .text {
     font-size: 11px
   }
+
+  #Iframe-Home-Calendar {
+    width: 400px;
+
+  }
+
+  #Premi_Riconoscimenti-text {
+    font-size: 12pt;
+    text-align: center;
+    text-wrap: nowrap;
+  }
+
   .social-media {
     text-align: left;
   }
+
   .links {
     text-align: left;
   }
+
+  aside {
+    display: block;
+    margin-top: 15%;
+    width: 40%;
+  }
+
+  .pulsante {
+    font-size: 6pt;
+    margin: 3% 0;
+  }
+
+  .box-studenti {
+    width: 100%;
+    padding: 0;
+    margin: 15% 0;
+  }
+
+  .boxSidebarEContenuti {
+    width: 95%;
+    margin: var(--margin-page-mediaquery);
+  }
+
+  .box-studenti-contenuti-materie {
+    width: 100%;
+  }
+
+  .box-studenti-contenuti-materie ol ul li {
+    margin-left: -10%;
+  }
+
+  .box-studenti-contenuti-materie li {
+    font-size: 7pt;
+  }
+
+  #responsive-iframe {
+    top: 125%;
+    left: -45%;
+    width: 150px;
+    height: 50%;
+  }
+
+  #footer .social-media {
+    text-align: center;
+    margin-top: 30%;
+  }
+
 }
+
 /* ------------------------- FINE QUERY @MEDIA RESPONSIVE MAX WIDTH 768px --------------------------------*/
-/* ------------------------- FINE @MEDIA RESPONSIVE--------------------------------*/
-
-
-
+/* ------------------------- FINE @MEDIA RESPONSIVE-------------------------------- */
