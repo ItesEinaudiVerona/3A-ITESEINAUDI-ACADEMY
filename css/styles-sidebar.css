@@ -1,12 +1,12 @@
 :root {
-    --primary-color: #d670ef;
-    --prymary-border: #0076a3;
+    --primary-color: #de8921;
+    --prymary-border: #de8921;
     --text-color: #f9f9f9;
     --page-background-color: rgba(133, 159, 243, 0.1);
-    --background-hover: #7c059a;
-    --gradient-start: #7c059a;
-    --gradient-end: #bc07ea;
-    --box-shadow: rgba(214, 112, 239, 1);
+    --background-hover: #87b5bf;
+    --gradient-start: #7eccdb;
+    --gradient-end: #06afd1;
+    --box-shadow: #05819a;
     --color-active: yellow;
     --color-visited: red;
     --text-color-h2: gray;

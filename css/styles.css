@@ -561,12 +561,13 @@ aside a #active {
   color: var(--primary-color);
 }
 
-.copyright {
+.copyright, #Info-ITES-Einaudi-Verona {
   text-align: center;
   margin-top: 10px;
+  line-height: 15pt;
 }
 
-#anno-corrente {
+#anno-corrente, #Info-ITES-Einaudi-Verona {
   color: var(--primary-color)
 }
 
@@ -649,15 +650,18 @@ aside a #active {
 
   .box-Students_life-description,
   .box-Students_lifeHere-description {
-    max-width: 80%;
+    max-width: 100%;
   }
 
   .box-Students_life-image img,
   .box-Students_lifeHere img {
-    max-width: 135%;
+    max-width: 175%;
     height: auto;
   }
 
+  #box-Students_lifeHere-calendar {
+    max-width: 175%;
+  }
   .fade img {
     max-width: 400px;
     max-height: 450px;
